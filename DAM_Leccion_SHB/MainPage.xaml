@@ -32,15 +32,14 @@
                 HorizontalOptions="Fill" />
             <Entry
                 x:Name="txtNombre"
-                HorizontalOptions="FillAndExpand"
-                Placeholder="Escribe un nombre" />
+                Text="{Binding Nombre, Source={StaticResource persona}}" />
 
             <Button
                 x:Name="btnAceptar"
-                Text="ACEPTAR"
                 Clicked="btnAceptar_Clicked"
                 HorizontalOptions="CenterAndExpand"
-                Text="Aceptar" />
+                Text="ACEPTAR"/>
+
 
         </VerticalStackLayout>
     </ScrollView>
