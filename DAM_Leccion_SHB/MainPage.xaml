@@ -39,8 +39,8 @@
                 x:Name="btnAceptar"
                 Text="ACEPTAR"
                 Clicked="btnAceptar_Clicked"
-                HorizontalOptions="CenterAndExpand" />
-
+                HorizontalOptions="CenterAndExpand"
+                Text="Aceptar" />
 
         </VerticalStackLayout>
     </ScrollView>
