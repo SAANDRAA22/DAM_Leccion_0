@@ -47,7 +47,7 @@
 		
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\sandra1.png" Color="#77a345" BaseSize="256,256"/>
+		<MauiSplashScreen Include="Resources\Splash\sandra1.png" Color="#77a345" BaseSize="256,256" />
 		
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -70,8 +70,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModel\" />
 	  <Folder Include="View\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="ViewModel\Modos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
