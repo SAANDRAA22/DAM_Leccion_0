@@ -38,15 +38,23 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+            
             <Entry
-                x:Name="txtNombre"
+                x:Name="txtApellido"
                 Placeholder="Ingrese su nombre "
                 Text="{Binding Nombre, Source={StaticResource persona}}" />
-
             <Entry
-                x:Name="txtContrasena"
+                x:Name="txtEdad"
+                Placeholder="Ingrese su Apellido "
+                Text="{Binding Apellido, Source={StaticResource persona}}" />
+            <Entry
+                x:Name="txtNombre"
+                Placeholder="Ingrese su Edad "
+                Text="{Binding Edad, Source={StaticResource persona}}" />
+
+            <!--<Entry                x:Name="txtContrasena"
                 Placeholder="Ingrese su contraseña"
-                IsPassword="True" />
+                IsPassword="True" /> -->
 
             <Button
                 x:Name="btnAceptar"
