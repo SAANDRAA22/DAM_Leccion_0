@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DAM_Leccion_SHB.MainPage">
+             x:Class="DAM_Leccion_SHB.MainPage"
+             xmlns:Leccion2="clr-namespace:DAM_Leccion_SHB.Model">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Leccion2:PersonasModel x:Key="persona" Nombre="Sandra" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout
@@ -24,7 +31,7 @@
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" /> -->
-            
+
             <Label Text="Sandra Hernandez Badillo "
                FontSize="24"
                TextColor="White"
@@ -38,36 +45,27 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
-            
-            <Entry
-                x:Name="txtApellido"
-                Placeholder="Ingrese su nombre "
-                Text="{Binding Nombre, Source={StaticResource persona}}" />
-            <Entry
-                x:Name="txtEdad"
-                Placeholder="Ingrese su Apellido "
-                Text="{Binding Apellido, Source={StaticResource persona}}" />
+
             <Entry
                 x:Name="txtNombre"
-                Placeholder="Ingrese su Edad "
-                Text="{Binding Edad, Source={StaticResource persona}}" />
-
-            <!--<Entry                x:Name="txtContrasena"
-                Placeholder="Ingrese su contraseña"
-                IsPassword="True" /> -->
-
+                Text="{Binding personasModel.Nombre}"
+                HorizontalOptions="FillAndExpand"
+                Placeholder="Escribe tú nombre"/>
+            <Entry
+                 x:Name="txtApellido"
+                 Text="{Binding personasModel.Apellido}"
+                 HorizontalOptions="FillAndExpand"
+                 Placeholder="Escribe tú apellido "/>
+            <Entry
+                 x:Name="txtEdad"
+                 Text="{Binding personasModel.Edad}"
+                 HorizontalOptions="FillAndExpand"
+                 Placeholder="Escribe tú edad"/>
             <Button
                 x:Name="btnAceptar"
                 Clicked="btnAceptar_Clicked"
                 HorizontalOptions="CenterAndExpand"
                 Text="ACEPTAR"/>
-            <!-- Logo -->
-            <!--<Image Source="sandra1.png" WidthRequest="200" HeightRequest="200" /> -->
-
-            <!-- Nombre debajo del logo -->
-            
-
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

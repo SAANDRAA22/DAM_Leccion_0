@@ -12,7 +12,7 @@
         <Entry 
            x:Name="txt1" 
            Placeholder="Texto 1" 
-           Text="Hola Muñeco"/>
+           Text="Hola "/>
         <Entry 
            x:Name="txt2" 
            Placeholder="Texto 2" 

@@ -1,4 +1,5 @@
 ﻿using DAM_Leccion_SHB.Model;
+using DAM_Leccion_SHB.ViewModel;
 
 namespace DAM_Leccion_SHB
 {
@@ -6,61 +7,52 @@ namespace DAM_Leccion_SHB
     {
         int count = 0;
 
+        MainPageViewModel mainPageViewModel = new MainPageViewModel();
+        public PersonasModel personaModel { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
-            //Ejecutar();
-
+            BindingContext = mainPageViewModel;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e )
+        private void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
+
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
             else
                 CounterBtn.Text = $"Clicked {count} times";
+
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
 
         public void Ejecutar()
-
         {
-            //{
-            //PersonaModel personaModel = new PersonaModel()
-
-            //{
-
-            //txtNombre.Text = "Hola aqui estoy";
-            //}
-
-            //BindingContext = personaModel.Nombre;
-
-            PersonaModel personaModel = new PersonaModel()
-
+            personaModel = new PersonasModel()
             {
-                Nombre = "Hola aqui estoy",
+                Nombre = "Sandra",
+                Apellido = "Hernandez",
+                Edad = "22",
             };
 
-            //personaModel.Nombre = "Hola aqui estoy";
+            BindingContext = personaModel;
 
+            //Binding personaBinding = new Binding();
+
+            //personaBinding.Source = personaModel;//Origen
+            //personaBinding.Path = "Nombre";//Ruta
+            //txtNombre.SetBinding(Entry.TextProperty,personaBinding);//Destino final
             //txtNombre.Text = personaModel.Nombre;
-
-
-
-
-            Binding personaBinding = new Binding();
-
-            personaBinding.Source = personaModel; //Origen
-            personaBinding.Path = "Nombre"; //ruta
-            txtNombre.SetBinding(Entry.TextProperty, personaBinding);
-
         }
-
+        //Evento Aceptar
         private void btnAceptar_Clicked(object sender, EventArgs e)
         {
-
-            DisplayAlert("Asistente del sistema", "Se ha guardado el registro en la BD", "Aceptar");
+            //DisplayAlert("Asistente del sistema ","Se ha guardado el registro en la BD","Aceptar");
+            //personasModel.Nombre = "sa";
+            //personasModel.Apellido = "he";
+            //personasModel.Edad = "19";
         }
     }
 
